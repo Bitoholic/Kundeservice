@@ -1,0 +1,36 @@
+﻿<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <div class="col-md-12">
+            <span style="margin:0em 0em 0em 2em; display:inline-block">
+                <a class="navbar-brand" routerLink="/">
+                    <span class="glyphicon glyphicon-list"></span>
+                    FAQ
+                </a>
+            </span>
+
+            <span style="margin:0em 0em 0em 2em; display:inline-block">
+                <a class="navbar-brand" routerLink="/Inquiry">
+                    <span class="glyphicon glyphicon-envelope"></span>
+                    Send inn spørsmål
+                </a>
+            </span>
+
+            <span style="margin:0em 0em 0em 2em; display:inline-block">
+                <a class="navbar-brand" routerLink="/CustomerService">
+                    <span class="glyphicon glyphicon-list-alt"></span>
+                    Kundeservice
+                </a>
+            </span>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="jumbotron well">
+        <router-outlet></router-outlet>
+    </div>
+</div>
+
+<footer class="text-center">
+    Rhino Airways &copy; 2017<br />
+</footer>

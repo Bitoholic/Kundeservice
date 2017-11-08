@@ -1,0 +1,247 @@
+﻿.jumbotron {
+    margin: 5em 0;
+    background-color: inherit;
+}
+
+.loading {
+    max-height: 1000px;
+    color: black;
+}
+
+.loaded {
+    transition-property: all;
+    transition: .5s ease;
+    max-height: 0;
+    color: white;
+    overflow-y: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+.hideTitle {
+    max-height: 0;
+    overflow-y: hidden;
+    color: white;
+    display: block;
+}
+
+.showTitle {
+    transition-property: all;
+    transition: 1s ease;
+    max-height: 100em;
+    color: black;
+    display: block;
+}
+
+.category {
+    margin: 0.5em 0;
+    border-radius: 0.25em;
+    background-color: steelblue;
+    border: 0.25em inset rgba(0,0,0,0.15);
+}
+
+    .category:hover {
+        -webkit-transition-property: background-color;
+        -webkit-transition-duration: 0.5s;
+        transition-property: background-color;
+        transition-duration: 0.5s;
+        background-color: mediumseagreen;
+    }
+
+.category-heading {
+    padding: 0.5em;
+    border-radius: 0;
+    cursor: pointer;
+    font-size: 1.5em;
+    text-transform: uppercase;
+    color: white;
+}
+
+.category-hide {
+    transition-property: all;
+    transition: .5s ease;
+    max-height: 0em;
+    overflow-y: hidden;
+}
+
+.category-show {
+    transition-property: all;
+    transition: 1s ease;
+    overflow-y: hidden;
+    max-height: 500em;
+    padding: 0.5em;
+    margin: 0.5em;
+    background-color: white;
+    border-radius: 0.25em;
+}
+
+.question:hover {
+    -webkit-transition-property: background-color;
+    -webkit-transition-duration: 0.5s;
+    transition-property: background-color;
+    transition-duration: 0.5s;
+    background-color: lightgreen;
+}
+
+.question {
+    border-radius: 0.25em;
+    margin: 0.5em 0;
+    padding: 1px;
+    background-color: lightskyblue;
+}
+
+.question-header {
+    padding: 0.5em;
+    cursor: pointer;
+    font-size: 1.5em;
+    text-transform: initial;
+    color: white;
+}
+
+.question-hide {
+    transition-property: all;
+    transition: .5s ease;
+    max-height: 0;
+    overflow-y: hidden;
+}
+
+.question-show {
+    transition-property: all;
+    transition: 1s ease;
+    overflow-y: hidden;
+    max-height: 1000px;
+}
+
+.answer {
+    background-color: white;
+    border-radius: 0 0 0.25em 0.25em;
+    padding: 1em;
+}
+
+label {
+    display: block;
+    color: white;
+    font-size: 1.2em;
+}
+
+.questionForm {
+    margin: 0.5em 0;
+    border-radius: 0.25em;
+    background-color: steelblue;
+    border: 0.25em inset rgba(0,0,0,0.15);
+    padding: 1em;
+}
+
+.ng-valid[required], .ng-valid.required {
+    border-left: .5em solid limegreen;
+}
+
+.ng-invalid:not(form) {
+    border-left: 0.5em solid red;
+}
+
+.overlay-hide {
+    transition-property: all;
+    transition: 1s ease;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: -1;
+    display: table;
+}
+
+.overlay-show {
+    transition-property: all;
+    transition: 1s ease;
+    background-color: rgba(0,0,0,0.6);
+    max-height: unset;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 2000;
+    display: table;
+}
+
+.messageBox-hide {
+    transition-property: all;
+    transition: .5s ease;
+    opacity: 0;
+    text-align: left;
+    background-color: white;
+    border-radius: 1em;
+    width: 0%;
+    height: 0%;
+    max-height: 0;
+    max-width: 0;
+    overflow: hidden;
+    margin: auto;
+    border: 0.1em outset rgba(100,100,100,0.6);
+    box-shadow: 0px 0px 10em black;
+    padding: 1em;
+}
+
+.messageBox-show {
+    transition-property: all;
+    transition: .5s ease;
+    opacity: 1;
+    text-align: left;
+    background-color: white;
+    border-radius: 1em;
+    width: 100%;
+    height: auto;
+    overflow-y: scroll;
+    max-width: 50em;
+    max-height: 100%;
+    margin: auto;
+    border: 0.5em outset rgba(100,100,100,0.6);
+    box-shadow: 0px 0px 10em black;
+    padding: 1em;
+}
+
+.inquiry {
+    margin: 0.5em 0;
+    border-radius: 0.25em;
+    background-color: steelblue;
+    border: 0.25em inset rgba(0,0,0,0.15);
+    color: white;
+}
+
+.inquiry-heading {
+    padding: 0.5em;
+    text-align: right;
+    text-transform: capitalize;
+}
+
+.inquiry-group {
+    display: table;
+    width: 100%;
+}
+
+.inquiry-group-addon {
+    display: table-cell;
+}
+
+    .inquiry-group-addon:first-child {
+        min-width: 10em;
+        width: 10em;
+        max-width: 10em;
+        vertical-align: top;
+        text-align: center;
+    }
+
+.inquiry-user {
+    font-size: 1.5em;
+}
+
+.inquiry-question {
+    margin: 0.5em 0 0 0;
+    border-radius: 0.5em 0 0.25em 0;
+    border: 0.15em inset rgba(0,0,0,0.15);
+    padding: 1em;
+    background-color: white;
+    color: black;
+}

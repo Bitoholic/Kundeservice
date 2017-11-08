@@ -1,0 +1,37 @@
+﻿<div [ngClass]="{ 'loading': !isDone, 'loaded': isDone }">
+    <div style="font-size:1.5em">Henter liste, vent litt... <span class="fa fa-spinner fa-pulse fa-fw" style="position:relative"></span></div>
+</div>
+<div [ngClass]="{ 'hideTitle': !isDone, 'showTitle': isDone }">
+    <h1>FAQ</h1>
+    <p>
+        Dersom du ikke finner svar på spørsmålene dine kan du kontakte oss
+        direkte
+        <a (click)="showForm()" style="cursor:pointer">her</a>.
+    </p>
+
+    <div class="input-group">
+        <input type="text" class="form-control" placeholder="Fritt søk" [(ngModel)]="search" (keyup.enter)="showSearch()" />
+        <span class="input-group-btn">
+            <button class="btn btn-info" (click)="showSearch()">
+                <i class="fa fa-search"></i> Søk
+            </button>
+        </span>
+    </div>
+</div>
+
+<app-faq-search></app-faq-search>
+
+<app-faq-category *ngFor='let qaList of faqList; let i = index' [index]='i' [category]='qaList.Category' [qaList]='qaList.QAList' [glyph]='qaList.GlyphIcon'>
+</app-faq-category>
+
+<div [ngClass]="{'overlay-hide': !isOpen, 'overlay-show': isOpen}">
+    <div style="display:table-cell;vertical-align:middle;text-align:center;">
+        <div [ngClass]="{'messageBox-hide': !isOpen, 'messageBox-show': isOpen}">
+            <div style="display:table;width:100%;height:100%">
+                <div style="display:table-cell;vertical-align:middle;text-align:left;">
+                    <app-inquiry [fromOutside]="true" [outsideJob]="this"></app-inquiry>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

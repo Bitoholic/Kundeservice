@@ -1,0 +1,12 @@
+﻿
+<div class="question">
+    <div class="question-header" (click)="toggleOpen()">
+        {{qa.Question}}
+    </div>
+    <div [ngClass]="{'question-hide': !isOpen, 'question-show': isOpen}">
+        <div class="answer">
+            {{qa.Answer}}
+        </div>
+    </div>
+    <ng-content></ng-content>
+</div>

@@ -1,0 +1,34 @@
+﻿<style type="text/css">
+    a {
+        color:gold;
+    }
+</style>
+
+<div [ngClass]="{ 'loading': !isDone, 'loaded': isDone }">
+    <div style="font-size:1.5em">Henter liste, vent litt... <span class="fa fa-spinner fa-pulse fa-fw" style="position:relative"></span></div>
+</div>
+
+<h1 [ngClass]="{ 'hideTitle': !isDone, 'showTitle': isDone }">Kundeservice</h1>
+
+<div *ngFor='let inquiry of inquiryList' class="inquiry">
+    <div class="inquiry-heading">
+        {{inquiry.Received}}
+    </div>
+    <div>
+        <div class="inquiry-group">
+            <div style="display:table-row">
+                <div class="inquiry-group-addon">
+                    <span class="fa fa-question-circle" style="font-size:64px"></span>
+                </div>
+                <div class="inquiry-group-addon">
+                    <div class="inquiry-user">{{inquiry.FirstName}} {{inquiry.LastName}}</div>
+                    <div><a href="mailto:{{inquiry.Email}}">({{inquiry.Email}})</a></div>
+                    <div class="inquiry-question">
+                        <p>Spørsmål</p>
+                        {{inquiry.Question}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>     
+</div>

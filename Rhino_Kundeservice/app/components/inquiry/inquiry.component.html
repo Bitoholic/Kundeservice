@@ -1,0 +1,98 @@
+﻿<h1>Kontakt oss</h1>
+
+<div [ngClass]="{'overlay-hide': !isOpen, 'overlay-show': isOpen}">
+    <div style="display:table-cell;vertical-align:middle;text-align:center;">
+        <div [ngClass]="{'messageBox-hide': !isOpen, 'messageBox-show': isOpen}">
+            <div style="display:table;width:100%;height:100%">
+                <div style="display:table-cell;vertical-align:middle;text-align:center;">
+                    <p>{{message}}</p>
+                    <p [hidden]="isOK"><i class="fa fa-spinner fa-spin"></i></p>
+                    <button (click)="closeDialogBox()" class="btn btn-lg btn-primary" [disabled]="!isOK">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form [formGroup]="qForm" (ngSubmit)="onSubmit()">
+    <div class="questionForm">
+        <div class="form-group">
+            <label for="firstname">Fornavn</label>
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <i class="fa fa-user-o"></i>
+                </div>
+                <input placeholder="Skriv inn ditt fornavn her"
+                       formControlName="firstname"
+                       class="form-control"
+                       id="firstname"
+                       type="text"
+                       required />
+            </div>
+            <div class="alert alert-warning" [hidden]="qForm.controls.firstname.valid || qForm.controls.firstname.pristine">
+                Fornavn er obligatorisk.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="lastname">Etternavn</label>
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <i class="fa fa-user-o"></i>
+                </div>
+                <input placeholder="Skriv inn ditt etternavn her"
+                       formControlName="lastname"
+                       class="form-control"
+                       id="lastname"
+                       type="text"
+                       required />
+            </div>
+            <div class="alert alert-warning" [hidden]="qForm.controls.lastname.valid || qForm.controls.lastname.pristine">
+                Etternavn er obligatorisk.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="email">Epost</label>
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <i class="fa fa-at"></i>
+                </div>
+                <input placeholder="Skriv inn ditt epost her"
+                       formControlName="email"
+                       class="form-control"
+                       id="email"
+                       type="email"
+                       required />
+            </div>
+            <div class="alert alert-warning" [hidden]="qForm.controls.email.valid || qForm.controls.email.pristine">
+                Epost er obligatorisk.
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="question">Spørsmål</label>
+            <div class="input-group">
+                <div class="input-group-addon">
+                    <i class="fa fa-pencil-square-o"></i>
+                </div>
+                <textarea placeholder="Skriv hva du lurer på her"
+                          formControlName="question"
+                          class="form-control"
+                          id="question"
+                          type="text"
+                          rows="5"
+                          required></textarea>
+            </div>
+            <div class="alert alert-warning" [hidden]="qForm.controls.question.valid || qForm.controls.question.pristine">
+                Spørsmål er obligatorisk.
+            </div>
+        </div>
+
+        <div class="form-group text-right">
+            <button *ngIf="fromOutside" type="button" class="btn btn-lg btn-danger" (click)="closeForm()">Avbryt</button>
+            <button *ngIf="!fromOutside" type="reset" class="btn btn-lg btn-danger" (click)="clearForm()">Reset skjema</button>
+            <button type="submit" class="btn btn-lg btn-success" [disabled]="!qForm.valid">Send spørsmål</button>
+        </div>
+    </div>
+</form>
